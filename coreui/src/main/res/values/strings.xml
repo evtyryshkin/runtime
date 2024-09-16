@@ -1,0 +1,11 @@
+<resources>
+    <string name="button_retry">Обновить</string>
+
+    <!-- Exception messages -->
+    <string name="something_went_wrong">Что-то пошло не так!</string>
+    <string name="class_cast_exception">ClassCastException of %s</string>
+    <string name="development_exception">"Возникла внутрянняя ошибка приложения! Мы\u00A0уже\u00A0работаем над\u00A0исправлением!"</string>
+    <string name="development_exception_action_button_back_to_main">Вернуться на главный экран</string>
+    <string name="network_exception_code">Код ошибки: %d</string>
+    <string name="network_exception_action_button_try_to_reload">Попробовать снова</string>
+</resources>

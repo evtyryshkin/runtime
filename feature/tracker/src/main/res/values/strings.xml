@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tracker screen -->
+    <string name="location_permission_hint">Для нормальной работы приложения вам\u00A0необходимо предоставить доступ к\u00A0данным о\u00A0местоположении устройства!</string>
+    <string name="location_permission_hint_action">Предоставить доступ</string>
+    <string name="error_content_permission_denied">Предоставьте приложению доступ к\u00A0данным о\u00A0местоположении устройства в\u00A0настройках вашего телефона!</string>
+    <string name="error_content_permission_denied_button">Предоставить доступ</string>
+    <string name="get_current_location_exception_message">Не удалось получить данные о текущем местоположении</string>
+    <string name="button_start">СТАРТ</string>
+    <string name="button_stop">Стоп</string>
+    <string name="button_resume">Продолжить</string>
+    <string name="button_finish">Закончить</string>
+
+    <!-- Race info content -->
+    <string name="time">Время</string>
+    <string name="distance">Расстояние</string>
+
+    <!-- Finish screen -->
+    <string name="navigate_to_main">На главную</string>
+
+</resources>

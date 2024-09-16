@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main settings screen -->
+    <string name="settings_title">Настройки</string>
+    <string name="profile_settings">Профиль</string>
+    <string name="tracker_settings">Трекер</string>
+
+    <!-- Tracker settings screen -->
+    <string name="tracker_settings_title">Настройки пробежки</string>
+    <string name="tracker_settings_count_down_before_run">Обратный отсчёт</string>
+    <string name="tracker_settings_count_down_before_run_bottom_sheet_title">Обратный отсчёт до старта</string>
+    <string name="tracker_settings_count_down_not_selected">Без времени</string>
+    <plurals name="tracker_settings_count_down_values">
+        <item quantity="one">%d секунда</item>
+        <item quantity="few">%d секунды</item>
+        <item quantity="many">%d секунд</item>
+        <item quantity="other">%d секунд</item>
+    </plurals>
+</resources>

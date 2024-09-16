@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">@color/m3_sys_color_dynamic_dark_primary</color>
+    <color name="background">@color/m3_sys_color_dynamic_dark_background</color>
+    <color name="secondary">@color/m3_sys_color_dynamic_dark_secondary</color>
+    <color name="error">@color/m3_ref_palette_error80</color>
+</resources>

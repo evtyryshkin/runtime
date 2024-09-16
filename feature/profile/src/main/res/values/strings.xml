@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Profile main screen -->
+    <string name="profile_title">Профиль</string>
+    <string name="history_of_races">История пробежек</string>
+    <string name="time">Время</string>
+    <string name="distance">Расстояние</string>
+</resources>

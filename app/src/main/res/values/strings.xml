@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Runtime</string>
+    <string name="profile">Профиль</string>
+    <string name="tracker">Трекер</string>
+    <string name="settings">Настройки</string>
+</resources>

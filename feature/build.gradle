@@ -1,0 +1,52 @@
+// File is not .kts because it can't reference to android {}, compileSdk and others
+// build.gradle work for all subprojects and can find android {}, compileSdk and others but build.gradle.kts can't
+
+subprojects {
+    apply plugin: 'com.android.library'
+    apply plugin: 'kotlin-android'
+    apply plugin: 'com.google.dagger.hilt.android'
+
+    android {
+        compileSdk = libs.versions.compileSdk.get().toInteger()
+
+        defaultConfig {
+            minSdk = libs.versions.minSdk.get().toInteger()
+        }
+
+        compileOptions {
+            sourceCompatibility = JavaVersion.VERSION_1_8
+            targetCompatibility = JavaVersion.VERSION_1_8
+            coreLibraryDesugaringEnabled = true
+        }
+        kotlinOptions {
+            jvmTarget = libs.versions.java.get()
+        }
+
+        buildFeatures {
+            compose = true
+        }
+        composeOptions {
+            kotlinCompilerExtensionVersion = libs.versions.kotlin.compiler.get()
+        }
+    }
+
+    dependencies {
+        implementation(project(":core"))
+        implementation(project(":coreui"))
+        implementation(project(":navigator"))
+        implementation(project(":network"))
+        implementation(project(":db"))
+
+        implementation(platform(libs.compose.bom))
+        implementation(libs.ui.tooling.preview)
+        implementation(libs.material3)
+        implementation(libs.navigation.compose)
+        implementation(libs.datastore)
+        implementation(libs.timber)
+        coreLibraryDesugaring(libs.desugar)
+
+        implementation(libs.hilt.navigation)
+        implementation(libs.hilt.android)
+        ksp(libs.hilt.compiler)
+    }
+}
