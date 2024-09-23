@@ -22,12 +22,12 @@ import androidx.compose.ui.unit.sp
 import ru.tyryshkin.core.informer.error.ErrorHandler
 import ru.tyryshkin.core.presentation.State
 import ru.tyryshkin.core.test.TestTag
+import ru.tyryshkin.coreui.complex.RaceInfoWidgets
 import ru.tyryshkin.coreui.component.RBottomBar
 import ru.tyryshkin.coreui.component.RButton
 import ru.tyryshkin.coreui.component.RScaffold
 import ru.tyryshkin.coreui.component.RSpacer
 import ru.tyryshkin.tracker.R
-import ru.tyryshkin.tracker.presentation.shared.RaceInfoContent
 
 @Composable
 fun RaceScreen(errorHandler: ErrorHandler, vm: RaceViewModel, onNavigateToFinish: (Long) -> Unit) {
@@ -56,7 +56,7 @@ fun RaceScreen(errorHandler: ErrorHandler, vm: RaceViewModel, onNavigateToFinish
         }
     ) { stateContent ->
         if (stateContent is RaceContent) {
-            RaceInfoContent(
+            RaceInfoWidgets(
                 date = stateContent.date,
                 time = stateContent.time,
                 distance = stateContent.distance

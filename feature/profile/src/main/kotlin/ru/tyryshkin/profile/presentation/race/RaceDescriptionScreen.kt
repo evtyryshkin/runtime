@@ -1,4 +1,4 @@
-package ru.tyryshkin.tracker.presentation.finish
+package ru.tyryshkin.profile.presentation.race
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
@@ -7,27 +7,27 @@ import androidx.compose.ui.res.stringResource
 import ru.tyryshkin.core.informer.error.ErrorHandler
 import ru.tyryshkin.coreui.complex.PolylineMap
 import ru.tyryshkin.coreui.complex.RaceInfoWidgets
-import ru.tyryshkin.coreui.component.RBottomBar
-import ru.tyryshkin.coreui.component.RButton
 import ru.tyryshkin.coreui.component.RScaffold
-import ru.tyryshkin.tracker.R
+import ru.tyryshkin.coreui.component.RTopAppBar
+import ru.tyryshkin.profile.R
 
 @Composable
-fun FinishScreen(errorHandler: ErrorHandler, vm: FinishViewModel, onNavigateToMain: () -> Unit) {
+fun RaceDescriptionScreen(
+    errorHandler: ErrorHandler,
+    vm: RaceDescriptionViewModel,
+    onNavigateToBack: () -> Unit
+) {
     val state = vm.state.collectAsState().value
 
-    RScaffold<FinishContent>(
+    RScaffold<RaceDescriptionStateContent>(
         state = state,
         errorHandler = errorHandler,
         onRetryClick = vm::onRetry,
-        onBackClick = {},
-        bottomBar = {
-            RBottomBar {
-                RButton(
-                    title = stringResource(R.string.navigate_to_main),
-                    onClick = onNavigateToMain
-                )
-            }
+        topBar = {
+            RTopAppBar(
+                title = stringResource(R.string.race_description_title),
+                onBackClick = onNavigateToBack
+            )
         }
     ) { finishContent ->
         Content(content = finishContent)
@@ -35,7 +35,7 @@ fun FinishScreen(errorHandler: ErrorHandler, vm: FinishViewModel, onNavigateToMa
 }
 
 @Composable
-private fun Content(content: FinishContent) {
+private fun Content(content: RaceDescriptionStateContent) {
     Column {
         RaceInfoWidgets(
             date = content.date,

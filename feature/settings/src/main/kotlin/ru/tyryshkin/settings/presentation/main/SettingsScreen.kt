@@ -44,7 +44,7 @@ private fun Content(modifier: Modifier, onNavigateToTrackerSettings: () -> Unit)
                     tint = MaterialTheme.colorScheme.secondary
                 )
             },
-            onClick = {} // TODO
+            onClick = {} // TODO Next Task about settings of profile
         )
         RCell(
             modifier = Modifier.testTag(TestTag.Settings.TRACKER),

@@ -11,7 +11,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
-import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import ru.tyryshkin.tracker.domain.usecase.UpdateLocationUseCase
@@ -44,7 +43,6 @@ class LocationService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         sensorManager.registerListener(sensorEventListener, sensor, SensorManager.SENSOR_DELAY_UI)
         locationClient.getLocationUpdates()
-            .catch { } // TODO ???
             .onEach { location -> updateLocationUseCase.invoke(location) }
             .launchIn(serviceScope)
 

@@ -1,4 +1,4 @@
-package ru.tyryshkin.tracker.presentation.shared
+package ru.tyryshkin.coreui.complex
 
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
@@ -13,15 +13,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import ru.tyryshkin.core.domain.entity.Distance
+import ru.tyryshkin.coreui.R
 import ru.tyryshkin.coreui.component.RSpacer
 import ru.tyryshkin.coreui.component.RWidget
 import ru.tyryshkin.coreui.component.WidgetStyle
 import ru.tyryshkin.coreui.component.WidgetType
 import ru.tyryshkin.coreui.theme.Typography
-import ru.tyryshkin.tracker.R
 
 @Composable
-fun RaceInfoContent(
+fun RaceInfoWidgets(
     date: String?,
     time: String,
     distance: Distance

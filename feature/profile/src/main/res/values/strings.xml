@@ -5,4 +5,8 @@
     <string name="history_of_races">История пробежек</string>
     <string name="time">Время</string>
     <string name="distance">Расстояние</string>
+
+    <!-- Race description -->
+    <string name="race_description_title">Информация о пробежке</string>
+    <string name="race_description_empty_placeholder_title">Истории пока нет!</string>
 </resources>

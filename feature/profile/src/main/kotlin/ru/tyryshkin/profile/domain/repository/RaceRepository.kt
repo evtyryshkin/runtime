@@ -4,4 +4,5 @@ import ru.tyryshkin.core.domain.entity.RaceInfo
 
 interface RaceRepository {
     suspend fun getRaces(): List<RaceInfo>
+    suspend fun getRaceInfo(raceId: Long): RaceInfo
 }

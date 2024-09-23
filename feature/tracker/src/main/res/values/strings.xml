@@ -11,10 +11,6 @@
     <string name="button_resume">Продолжить</string>
     <string name="button_finish">Закончить</string>
 
-    <!-- Race info content -->
-    <string name="time">Время</string>
-    <string name="distance">Расстояние</string>
-
     <!-- Finish screen -->
     <string name="navigate_to_main">На главную</string>
 

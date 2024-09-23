@@ -12,6 +12,17 @@ class RaceRepositoryImpl @Inject constructor(private val raceDao: RaceDao) : Rac
     override suspend fun getRaces(): List<RaceInfo> {
         return raceDao.getAll().map(Race::asDomain)
     }
+
+    override suspend fun getRaceInfo(raceId: Long): RaceInfo {
+        val race = raceDao.getRace(raceId)
+        return RaceInfo(
+            id = race.id,
+            date = race.date,
+            time = race.time,
+            distance = race.distance,
+            points = race.points.map { LatLng(it.latitude, it.longitude) }
+        )
+    }
 }
 
 private fun Race.asDomain() = RaceInfo(

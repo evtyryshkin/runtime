@@ -11,5 +11,5 @@ data class TrackerSettingsContent(
     sealed class BottomSheet {
         data object Hidden : BottomSheet()
         data object CountDown : BottomSheet()
-    } // TODO Подумать можно ли вынести BottomSheet в общий State. ВРоде как нет, так как он всегда разный
+    }
 }

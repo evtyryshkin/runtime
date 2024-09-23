@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
-import androidx.compose.material3.RadioButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.collectAsState
@@ -18,6 +17,7 @@ import ru.tyryshkin.core.informer.error.ErrorHandler
 import ru.tyryshkin.core.test.TestTag
 import ru.tyryshkin.coreui.component.RCell
 import ru.tyryshkin.coreui.component.RIcon
+import ru.tyryshkin.coreui.component.RRadioButton
 import ru.tyryshkin.coreui.component.RScaffold
 import ru.tyryshkin.coreui.component.RSpacer
 import ru.tyryshkin.coreui.component.RText
@@ -112,7 +112,7 @@ private fun CountDownContent(
             modifier = Modifier.testTag("${TestTag.Settings.Tracker.MODAL_BOTTOM_SHEET_COUNT_DOWN_VALUE}$value"),
             title = getCountDownValueString(value),
             trailingContent = {
-                RadioButton( // TODO core ui
+                RRadioButton(
                     selected = value == countDownForSelect.selected,
                     onClick = onClick
                 )

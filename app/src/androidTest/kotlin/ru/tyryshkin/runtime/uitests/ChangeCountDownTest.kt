@@ -94,7 +94,13 @@ class ChangeCountDownTest {
             // Сверяем текущее дефолтное значение
             onNode(
                 matcher = hasTestTag(TestTag.Component.Cell.SUBTITLE) and
-                    hasText("$defaultSecondsValue секунды") and // TODO сверять со строкой из ресурса
+                    hasText(
+                        composeTestRule.activity.resources.getQuantityString(
+                            ru.tyryshkin.settings.R.plurals.tracker_settings_count_down_values,
+                            defaultSecondsValue,
+                            defaultSecondsValue
+                        )
+                    ) and
                     hasParent(hasTestTag(TestTag.Settings.Tracker.COUNT_DOWN)),
                 useUnmergedTree = true
             ).assertExists()
@@ -112,7 +118,13 @@ class ChangeCountDownTest {
             // Сверяем, что значение изменилось
             onNode(
                 matcher = hasTestTag(TestTag.Component.Cell.SUBTITLE) and
-                    hasText("$expectedChangedSecondsValue секунд") and // TODO сверять со строкой из ресурса
+                    hasText(
+                        composeTestRule.activity.resources.getQuantityString(
+                            ru.tyryshkin.settings.R.plurals.tracker_settings_count_down_values,
+                            expectedChangedSecondsValue,
+                            expectedChangedSecondsValue
+                        )
+                    ) and
                     hasParent(hasTestTag(TestTag.Settings.Tracker.COUNT_DOWN)),
                 useUnmergedTree = true
             ).assertExists()

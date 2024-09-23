@@ -36,4 +36,5 @@ dependencies {
     implementation(libs.navigation.compose)
     implementation(libs.core.ktx)
     implementation(libs.timber)
+    implementation(libs.maps.compose)
 }
