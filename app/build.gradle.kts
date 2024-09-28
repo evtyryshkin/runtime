@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.secretsPlugins)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hiltPlugin)
+    id("maven-publish")
 }
 
 val versionProps = Properties()
@@ -65,6 +66,12 @@ android {
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
     }
+
+    publishing {
+        singleVariant("debug") {
+            publishApk()
+        }
+    }
 }
 
 secrets {
@@ -99,4 +106,18 @@ dependencies {
     androidTestImplementation(libs.rules)
     androidTestImplementation(libs.ui.test.junit4)
     androidTestImplementation(libs.hilt.android.testing)
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "ru.tyryshkin.runtime"
+            artifactId = "app"
+            version = "1.1"
+
+            afterEvaluate {
+                from(components["debug"])
+            }
+        }
+    }
 }
